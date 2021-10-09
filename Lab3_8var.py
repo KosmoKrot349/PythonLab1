@@ -1,6 +1,7 @@
 class Animal:
-    __slots__ = ('count','weight','height','classification')
-
+    __slots__ = ('weight','height','classification')
+    count=0
+    
     def __del__(self):
         print('i have deleted animal object')
         Animal.count-=1
