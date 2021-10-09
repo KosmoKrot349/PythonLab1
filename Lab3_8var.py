@@ -1,9 +1,5 @@
 class Animal:
-    count = 0
-    weight = 0
-    height = 0
-    classification = ""
-
+    __slots__ = ('count','weight','height','classification')
 
     def __del__(self):
         print('i have deleted animal object')
@@ -42,8 +38,7 @@ class Animal:
         return F'Animal weight:{self.weight},height:{self.height},classification:{self.classification}'
 
 class Pet(Animal):
-    sound = ""
-    food = ""
+    __slots__ = ('sound','food')
 
     def input(self):
         super().input()
@@ -74,8 +69,7 @@ class Pet(Animal):
         return super().show()+F',sound:{self.sound} food:{self.food}'
 
 class Cow(Pet):
-    name = ""
-    age = 0
+    __slots__ = ('name','age')
 
     def setName(self, name):
         self.name = name
@@ -113,6 +107,3 @@ if __name__ == "__main__":
     print(var1.show())
     print(var2.show())
     print(var3.show())
-
-
-
